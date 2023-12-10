@@ -1,0 +1,22 @@
+{
+	"name": "Service account secret",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"minikube": "none"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot",
+				"ms-kubernetes-tools.vscode-kubernetes-tools"
+			]
+		}
+	},
+	"mounts": [{
+		"source": "${localEnv:HOME}/.kube",
+		"target": "/home/vscode/.kube",
+		"type": "bind"
+	}]
+}
